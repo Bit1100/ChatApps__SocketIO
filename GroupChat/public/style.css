@@ -1,0 +1,244 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+main {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.heading {
+    text-align: center;
+    background-color: red;
+    box-shadow: 2px 0px 2px gold;
+    color: gold;
+    width: max-content;
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
+.room-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 2rem;
+    scrollbar-width: none;
+}
+
+.room-box::-webkit-scrollbar {
+    display: none;
+}
+
+.room-box>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border: 2px solid black;
+    padding: 1rem;
+    margin: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.836);
+    border-radius: 0.4rem;
+}
+
+.room-box .room {
+    padding: 0 1rem;
+}
+
+.room-box a {
+    color: black;
+    background-color: gold;
+    padding: 0.4rem 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.room-box a:hover {
+    background-color: rgba(255, 217, 0, 0.637);
+    transform: scale(1.1);
+}
+
+.chat-container,
+.room-container {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    border: 3px solid gold;
+    overflow: auto;
+    width: 700px;
+    margin: 2.8rem;
+    position: relative;
+    background-color: white;
+    min-height: 75vh;
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: gold;
+    border: 1px solid black;
+    color: black;
+}
+
+.connection-meter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.connection-meter .connect-btn,
+.disconnect-btn {
+    background-color: black;
+    padding: 0.4rem;
+    color: gold;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 0.4rem;
+}
+
+.chat-header * {
+    margin: 0.3rem;
+}
+
+.message-box,
+.room-box {
+    color: black;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0.4rem;
+    margin-bottom: auto;
+    overflow-y: auto;
+}
+
+.message-box .message {
+    position: relative;
+    width: max-content;
+    max-width: 300px;
+    padding: 1rem 1.2rem;
+    margin: 0.6rem 2rem;
+    border-radius: 0.4rem;
+    color: white;
+    font-size: 1rem;
+}
+
+.message-box .incoming {
+    background-color: red;
+}
+
+.message-box .outgoing {
+    background-color: lightgray;
+    color: black;
+    margin-left: auto;
+}
+
+.message-box .message h3 {
+    position: absolute;
+    top: -1rem;
+    color: black;
+    left: 0;
+    font-size: 0.8rem;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    background-color: gold;
+    width: 100%;
+}
+
+form input {
+    font-size: 1.1rem;
+    padding: 0.6rem;
+}
+
+form input[type="text"] {
+    flex: 2;
+    text-align: center;
+    border: 2px solid gold;
+    outline: none;
+    /* flex: 5 0 150px; */
+}
+
+form input[type="submit"] {
+    /* flex: 2 0 50px; */
+    font-weight: bold;
+    background-color: black;
+    color: gold;
+    outline: none;
+}
+
+footer {
+    background-color: white;
+    color: black;
+    text-align: center;
+    line-height: 3rem;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    main {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    .chat-container,
+    .room-container {
+        min-height: 80vh;
+        width: 80%;
+        margin: 2.5rem auto;
+    }
+    .message-box {
+        margin-bottom: auto;
+        height: 100%;
+    }
+}
+
+@media (max-width: 512px) {
+    .heading {
+        font-size: 1.4rem;
+    }
+    .chat-container,
+    .room-container {
+        width: 90%;
+    }
+    .chat-header {
+        flex-direction: column;
+    }
+    form input {
+        font-size: 1rem;
+        padding: 0.4rem;
+    }
+    .room-box {
+        margin: 0.5rem;
+        margin-bottom: auto;
+    }
+    .room-box>div {
+        font-size: 1.1rem;
+        padding: 0.8rem;
+    }
+    .room-box .room {
+        padding: 0 1rem;
+    }
+    .room-box a {
+        padding: 0.4rem 0.8rem;
+    }
+}

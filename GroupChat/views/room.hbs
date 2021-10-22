@@ -1,0 +1,36 @@
+<!DOCTYPE hbs>
+<hbs lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Intermediate Messaging App</title>
+        <link rel="stylesheet" href="style.css" />
+        <script>
+            const roomName = "{{roomName}}";
+        </script>
+        <script defer src="/socket.io/socket.io.js"></script>
+        <script defer src="msg.js"></script>
+    </head>
+
+    <body>
+        <main>
+            <h1 class="heading">Welcome to {{ roomName }} Room</h1>
+            <div class="chat-container">
+                <div class="chat-header">
+                    <!-- <img src="img/logo.svg" alt="BiTApp" /> -->
+                    <h2>BiTGroupChatApp</h2>
+                    <div class="connection-meter">
+                        <button class="disconnect-btn">Leave the Room</button>
+                    </div>
+                </div>
+                <div class="message-box"></div>
+                <form id="form">
+                    <input type="text" id="msg" placeholder="Enter the Message" autocomplete="off" required />
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+        </main>
+        <footer>CopyRight &copy;. All Rights Reserved</footer>
+    </body>
+</hbs>
